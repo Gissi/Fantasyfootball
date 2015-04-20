@@ -34,7 +34,9 @@ all_fantasy_data_frame <- data.frame()
   names(fantasy_data_frame) <- sub("NULL.","",names(fantasy_data_frame))
   
   all_fantasy_data_frame <- rbind(all_fantasy_data_frame,fantasy_data_frame) 
-
+  all_fantasy_data_frame$Price<-gsub("£","",all_fantasy_data_frame$Price)
+  all_fantasy_data_frame$Total<-as.numeric(all_fantasy_data_frame$Total)
+  all_fantasy_data_frame$Price<-as.numeric(all_fantasy_data_frame$Price)
   
   }
 
